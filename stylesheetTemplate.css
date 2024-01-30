@@ -1,129 +1,38 @@
-body { /* code for the main area of content */
-    /* add font-family, color, background color and background image */
-    margin: 0;
-    background-size: 65px;      
-}
+html{box-sizing:border-box;overflow-x:hidden}*,*:before,*:after{box-sizing:inherit}
 
-* {
-    box-sizing: border-box;
-}
+html,body,h1,h2,h3,h4,h5,h6{font-family:'Roboto',sans-serif;font-size:15px;line-height:1.5}
 
-#container {
-    max-width: 900px; /* this is the width of your layout! You should not change this without adjusting code at the bottom*/
-    margin: 0 auto; /* this centers the entire page */
-}
+h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px; margin-bottom:0em}h6{font-size:16px}
+hr{border:0;border-top:1px solid #eee;margin:20px 0}
+ul{list-style: none;line-height: 2.5em; padding-left:0px}
 
-#container a { /* code for links*/
-    /*add a color and font-weight property here*/
-}
+.box-light-grey{color:#000!important;background-color:#f1f1f1!important}
 
-#header { 
-    /* add a background color and background image to this property, you may change the height if you want */
-    width: 100%;
-    height: 150px;
-    background-size: 100%;
-}
+.margin-top{margin-top:16px!important}
+.margin-right{margin-right:5px!important}
+.margin-bottom{margin-bottom:16px!important}
+.grid-center{text-align:center!important}
 
-#navbar {
-    /* add a background-color property, change the height if you want */
-    height: 40px;
-}
+.content{margin-left:auto;margin-right:auto;max-width:980px}
+.container{padding:0.01em 16px}
 
-#navbar ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    justify-content: space-evenly;
-}
+.card{box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)}
+.card-4{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+.display-container{position:relative}
 
-#navbar li {
-    padding-top: 10px;
-}
+.bar{.w3-bar{width:100%;overflow:hidden}.w3-center}
+.bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
+.button{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+.float-right{float:right!important} 
 
-#navbar li a {
-    /* add a color property, you may adjust font-weight if you like */  
-    font-weight: 800;
-    text-decoration: none;
-}
+.container:before,.container:after,.grid-padding:after,.grid-padding:before{content:"";display:table;clear:both}
+.grid-padding,.grid-padding>.grid-half,.grid-padding>.grid-third,.grid-padding>.grid-twothird,.grid-padding>.grid-threequarter,.grid-padding>.grid-quarter,.grid-padding>.grid-col{padding:0 8px}
+.grid-third, .grid-twothird{float:left;width:100%}
 
-#navbar li a:hover { 
-    /* add a color property  */
-    text-decoration: underline;
-}
-
-#flex {
-    display: flex;
-}
-
-aside { /*sidebar*/
-    /* add a background-color, remove the font-size property if you want */
-    width: 200px;
-    padding: 20px;
-    font-size: smaller;
-}
-
-
-main { /* main area, or body, of the webpage*/
-    /* add a background-color */
-    flex: 1;
-    padding: 20px;
-    order: 2;
-}
-
-footer {
-    /* add a background-color, adjust the text-alignment if you like */
-    width: 100%;
-    height: 40px;
-    padding: 10px;
-    text-align: center;
-}
-
-/*put your heading styles here*/
-
-
-
-
-
-
-
-
-
-/* BELOW THIS POINT IS MEDIA QUERY */
-
-/* so you wanna change the width of your page? 
-by default, the container width is 900px.
-in order to keep things responsive, take your new height,
-and then subtrack it by 100. use this new number as the 
-"max-width" value below
-*/
-
-@media only screen and (max-width: 800px) {
-    #flex {
-        flex-wrap: wrap;
-    }
-
-    aside {
-        width: 100%;
-    }
-
-    /* the order of the items is adjusted here for responsiveness!
-since the sidebars would be too small on a mobile device.
-feel free to play around with the order!
-*/
-    main {
-        order: 1;
-    }
-
-    #leftSidebar {
-        order: 2;
-    }
-
-    #rightSidebar {
-        order: 3;
-    }
-
-    #navbar ul {
-        flex-wrap: wrap;
-    }
-}
+.col,.grid-half,.grid-third,.grid-twothird,.grid-threequarter,.grid-quarter{float:left;width:100%}
+.col.s1{width:8.33333%}.col.s2{width:16.66666%}.col.s3{width:24.99999%}.col.s4{width:33.33333%}
+.col.s5{width:41.66666%}.col.s6{width:49.99999%}.col.s7{width:58.33333%}.col.s8{width:66.66666%}
+.col.s9{width:74.99999%}.col.s10{width:83.33333%}.col.s11{width:91.66666%}.col.s12{width:99.99999%}
+@media (min-width:601px){.col.m1{width:8.33333%}.col.m2{width:16.66666%}.col.m3,.grid-quarter{width:24.99999%}.col.m4,.grid-third{width:33.33333%}
+.col.m5{width:41.66666%}.col.m6,.grid-half{width:49.99999%}.col.m7{width:58.33333%}.col.m8,.grid-twothird{width:66.66666%}
+.col.m9,.grid-threequarter{width:74.99999%}.col.m10{width:83.33333%}.col.m11{width:91.66666%}.col.m12{width:99.99999%}}
