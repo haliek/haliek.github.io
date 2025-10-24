@@ -14,11 +14,11 @@
     <div class="wrap">
       <a class="brand" href="index.html">Halie Kerns</a>
       <p class="tagline">Systems and Data Science Librarian</p>
-    <nav aria-label="Primary">
-  <a href="index.html" aria-current="page">Home</a>
-  <a href="projects.html">Projects</a>
-  <a href="https://docs.google.com/document/d/1gGbyf1-onVEUQ87c90viR-rQYo_wvKoxeAvMsMLUpiY/edit?usp=sharing" target="_blank" rel="noopener">Curriculum Vitae</a>
-</nav>
+      <nav aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="https://docs.google.com/document/d/1gGbyf1-onVEUQ87c90viR-rQYo_wvKoxeAvMsMLUpiY/edit?usp=sharing" target="_blank" rel="noopener">Curriculum Vitae</a>
+      </nav>
     </div>
   </header>
 
@@ -29,24 +29,23 @@
         <img src="images/profile.jpg" alt="Portrait of Halie Kerns" class="avatar" />
         <h2 id="profile-heading" class="visually-hidden">Profile</h2>
 
-      <div class="block">
-  <h3>Librarian Experience</h3>
-  <ul class="list">
-    <li>Systems</li>
-    <li>Data Science</li>
-    <li>Digital Scholarship</li>
-  </ul>
-</div>
+        <div class="block">
+          <h3>Librarian Experience</h3>
+          <ul class="list">
+            <li>Systems</li>
+            <li>Data Science</li>
+            <li>Digital Scholarship</li>
+          </ul>
+        </div>
 
-<div class="block">
-  <h3>Skills</h3>
-  <ul class="list">
-    <li><strong>Coding:</strong> Python, R, SQL</li>
-    <li><strong>Library Systems:</strong> Koha, Alma</li>
-    <li><strong>Web:</strong> HTML/CSS, JavaScript, Accessibility</li>
-  </ul>
-</div>
-
+        <div class="block">
+          <h3>Skills</h3>
+          <ul class="list">
+            <li><strong>Coding:</strong> Python, R, SQL</li>
+            <li><strong>Library Systems:</strong> Koha, Alma</li>
+            <li><strong>Web:</strong> HTML/CSS, JavaScript, Accessibility</li>
+          </ul>
+        </div>
 
         <div class="block">
           <h3>Contact</h3>
@@ -64,19 +63,38 @@
         </p>
       </article>
 
+      <!-- Selected Projects (with banner images) -->
       <article class="card">
         <h2>Selected Projects</h2>
 
+        <!-- Dear Data Binghamton -->
         <div class="project">
-          <h3><a href="#" rel="noopener">Information Literacy Game</a></h3>
-          <p>Interactive, browser-based activity for teaching IL concepts.</p>
-          <p class="meta">Role: Lead · Stack: Twine</p>
+          <img class="thumb" src="images/dearData.jpg"
+               alt="Photo of collaborative analog data drawings on a long whiteboard surface"
+               loading="lazy" />
+          <h3>
+            <a href="https://dhandlib.org/from-postcards-to-pom-poms-expanding-data-literacy-through-visualization-and-physicalization-with-dear-data/"
+               target="_blank" rel="noopener">
+              Dear Data Binghamton
+            </a>
+          </h3>
+          <p>Creative analog data literacy project resulting in a blend of art, data, and self-reflection.</p>
+          <p class="meta">Topics: Data visualization, Data privacy</p>
         </div>
 
+        <!-- Thematic Tri-Semester Data Science Curriculum -->
         <div class="project">
-          <h3><a href="#" rel="noopener">Book-Banning Trends Dashboard</a></h3>
-          <p>Exploratory visuals combining historical and current datasets.</p>
-          <p class="meta">Tools: Python, CSV, D3</p>
+          <img class="thumb" src="images/thematic.png"
+               alt="Infographic showing data science semester themes as a mind map"
+               loading="lazy" />
+          <h3>
+            <a href="https://publishing.escholarship.umassmed.edu/jeslib/article/id/961/"
+               target="_blank" rel="noopener">
+              Thematic Tri-Semester Data Science Curriculum
+            </a>
+          </h3>
+          <p>Integrated curriculum designed to introduce data science concepts across disciplines.</p>
+          <p class="meta">Topics: Data literacy, Pedagogy, Curriculum design</p>
         </div>
 
         <p class="more"><a href="projects.html">See all projects →</a></p>
@@ -90,8 +108,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
