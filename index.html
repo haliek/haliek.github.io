@@ -6,6 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Portfolio of Halie Kerns, Systems and Data Science Librarian." />
   <link rel="stylesheet" href="stylesheet.css" />
+
+  <!-- Page-specific overrides to keep thumbnails square and text beside image -->
+  <style>
+    /* Image left, text right */
+    .project-row{
+      display:flex; align-items:center; gap:14px;
+      padding:12px 0; border-top:1px solid var(--line);
+      flex-wrap:nowrap;
+    }
+    .project-row:first-of-type{ border-top:0; padding-top:0; }
+    .project-row > img{ flex:0 0 120px; }
+    .project-row > div{ flex:1 1 auto; min-width:0; }
+
+    /* 120×120 thumbnails */
+    .thumb-photo, .thumb-icon{
+      width:120px; height:120px; display:block;
+      border-radius:10px; border:1px solid var(--line);
+      box-shadow:0 3px 8px rgba(0,0,0,.06);
+      background:#fff; object-position:center;
+    }
+    .thumb-photo{ object-fit:cover; }
+    .thumb-icon{ object-fit:contain; padding:10px; }
+
+    /* Only stack on very small screens */
+    @media (max-width:420px){
+      .project-row{ flex-direction:column; align-items:flex-start; }
+    }
+  </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
@@ -59,7 +87,7 @@
       <article class="card">
         <h2 id="about-heading">About</h2>
         <p>
-       I am a Systems and Technology Librarian at Bridgewater State University, where I manage core library systems, lead the redesign of the library website, and implement technology solutions that enhance discovery, access, and user experience. Previously, I served as a Digital Scholarship Librarian specializing in data science, data visualization, and research data managemen. With master’s degrees in Library and Information Science and Information Design and Technology, I leverage technical expertise to advance digital library initiatives and build data literacy. I invite you to explore my work and connect with me around shared interests in digital scholarship, data science, and library technology.
+          I am a Systems and Technology Librarian at Bridgewater State University, where I manage core library systems, lead the redesign of the library website, and implement technology solutions that enhance discovery, access, and user experience. Previously, I served as a Digital Scholarship Librarian specializing in data science, data visualization, and research data managemen. With master’s degrees in Library and Information Science and Information Design and Technology, I leverage technical expertise to advance digital library initiatives and build data literacy. I invite you to explore my work and connect with me around shared interests in digital scholarship, data science, and library technology.
         </p>
       </article>
 
@@ -67,7 +95,7 @@
       <article class="card">
         <h2>Selected Projects</h2>
 
-        <!-- Dear Data Binghamton -->
+        <!-- Dear Data Binghamton (photo thumb) -->
         <div class="project-row">
           <img class="thumb-photo" src="images/dearData.jpg"
                alt="Photo of collaborative analog data drawings on a long whiteboard surface"
@@ -84,9 +112,9 @@
           </div>
         </div>
 
-        <!-- Thematic Tri-Semester Data Science Curriculum -->
+        <!-- Thematic Tri-Semester Data Science Curriculum (icon-ish) -->
         <div class="project-row">
-          <img class="thumb-photo" src="images/thematic.png"
+          <img class="thumb-icon" src="images/thematic.png"
                alt="Infographic showing data science semester themes as a mind map"
                loading="lazy" />
           <div>
