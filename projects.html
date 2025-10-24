@@ -6,6 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Projects by Halie Kerns." />
   <link rel="stylesheet" href="stylesheet.css" />
+
+  <!-- Page-specific overrides to keep thumbnails square and text beside image -->
+  <style>
+    .project-row{
+      display:flex; align-items:center; gap:14px;
+      padding:12px 0; border-top:1px solid var(--line);
+      flex-wrap:nowrap;
+    }
+    .project-row:first-of-type{ border-top:0; padding-top:0; }
+    .project-row > img{ flex:0 0 120px; }
+    .project-row > div{ flex:1 1 auto; min-width:0; }
+
+    .thumb-photo, .thumb-icon{
+      width:120px; height:120px; display:block;
+      border-radius:10px; border:1px solid var(--line);
+      box-shadow:0 3px 8px rgba(0,0,0,.06);
+      background:#fff; object-position:center;
+    }
+    .thumb-photo{ object-fit:cover; }
+    .thumb-icon{ object-fit:contain; padding:10px; }
+
+    @media (max-width:420px){
+      .project-row{ flex-direction:column; align-items:flex-start; }
+    }
+  </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
@@ -29,7 +54,7 @@
     </header>
 
     <section class="card">
-      <!-- Dear Data Binghamton -->
+      <!-- Dear Data Binghamton (photo) -->
       <div class="project-row">
         <img class="thumb-photo" src="images/dearData.jpg"
              alt="Photo of collaborative analog data drawings on a long whiteboard surface"
@@ -49,9 +74,9 @@
         </div>
       </div>
 
-      <!-- Thematic Tri-Semester Data Science Curriculum -->
+      <!-- Thematic Tri-Semester Data Science Curriculum (icon) -->
       <div class="project-row">
-        <img class="thumb-photo" src="images/thematic.png"
+        <img class="thumb-icon" src="images/thematic.png"
              alt="Infographic showing data science semester themes as a mind map"
              loading="lazy" />
         <div>
@@ -68,9 +93,9 @@
         </div>
       </div>
 
-      <!-- CRAAP Attack -->
+      <!-- CRAAP Attack (icon) -->
       <div class="project-row">
-        <img class="thumb-photo" src="images/craapAttack.png"
+        <img class="thumb-icon" src="images/craapAttack.png"
              alt="Screenshot of CRAAP Attack game interface with reliable vs unreliable classification boxes"
              loading="lazy" />
         <div>
@@ -87,33 +112,7 @@
         </div>
       </div>
 
-      <!-- Thesis: Banning the Bildungsroman -->
+      <!-- Thesis: Banning the Bildungsroman (icon) -->
       <div class="project-row">
-        <img class="thumb-photo" src="images/banningBild.png"
-             alt="Choropleth map of U.S. states showing government censorship instances since 1970"
-             loading="lazy" />
-        <div>
-          <h2>
-            <a href="https://bit.ly/3sitZtV" target="_blank" rel="noopener">
-              Banning the Bildungsroman: A Digital Exhibit
-            </a>
-          </h2>
-          <p>Website built to display a data collection and visualization project.</p>
-          <ul class="meta-list">
-            <li><strong>Tools:</strong> Tableau, Wix</li>
-            <li><strong>Topics:</strong> Censorship, Cultural Trends, Data Visualization</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer" role="contentinfo">
-    <div class="wrap">
-      <p>© <span id="year"></span> Halie Kerns</p>
-    </div>
-  </footer>
-
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+        <img class="thumb-icon" src="images/banningBild.png"
+             alt="Choropleth map of U.S. states showing
