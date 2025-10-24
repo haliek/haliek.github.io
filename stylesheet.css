@@ -127,18 +127,22 @@ nav a[aria-current="page"]{ font-weight:600; }
   *{ animation:none !important; transition:none !important; scroll-behavior:auto !important }
 }
 
-/* Square thumbnail base */
+/* 120x120 fixed thumbnails (always cropped to square) */
 .thumb-photo,
-.thumb-icon{
+.thumb-icon {
   width: 120px;
-  aspect-ratio: 1 / 1;
+  height: 120px;
+  display: block;
   border-radius: 10px;
   border: 1px solid var(--line);
   box-shadow: 0 3px 8px rgba(0,0,0,.06);
   background: #fff;
+  object-fit: cover;        /* <– THIS crops image instead of fitting */
+  object-position: center;  /* <– keeps subject centered */
   flex: 0 0 auto;
-  display: block;
+  padding: 0;               /* <– remove padding for consistent crop */
 }
+
 
 /* Photos can be cropped nicely */
 .thumb-photo{
