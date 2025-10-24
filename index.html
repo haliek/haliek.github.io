@@ -6,65 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Portfolio of Halie Kerns, Systems and Data Science Librarian." />
   <link rel="stylesheet" href="stylesheet.css" />
-
-  <!-- Home-page specific overrides -->
-  <style>
-    /* Project grid: 2 cards per row (1 on small screens) */
-    .project-grid{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 12px;
-    }
-    @media (max-width: 900px){
-      .project-grid{ grid-template-columns: 1fr; }
-    }
-
-    /* Card wrapper */
-    .project-card{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:var(--card);
-      box-shadow:0 4px 12px rgba(0,0,0,.05);
-      padding:16px;
-    }
-
-    /* Title spans full width */
-    .project-title{
-      margin:0 0 12px;
-      font-size:1.15rem;
-      line-height:1.3;
-    }
-    .project-title a{
-      color:var(--accent);
-      text-decoration:none;
-    }
-    .project-title a:hover{ text-decoration:underline; }
-
-    /* Body: image left, text right */
-    .project-body{
-      display:flex;
-      gap:14px;
-      align-items:flex-start;
-    }
-    .project-body > img{ flex:0 0 120px; }
-    .project-body > div{ flex:1 1 auto; min-width:0; }
-
-    /* 120×120 thumbnails */
-    .thumb-photo, .thumb-icon{
-      width:120px; height:120px; display:block;
-      border-radius:10px; border:1px solid var(--line);
-      box-shadow:0 3px 8px rgba(0,0,0,.06);
-      background:#fff; object-position:center;
-    }
-    .thumb-photo{ object-fit:cover; }         /* crop photos to fill */
-    .thumb-icon{ object-fit:contain; padding:10px; } /* preserve icons */
-
-    /* Mobile: stack within each project */
-    @media (max-width: 480px){
-      .project-body{ flex-direction:column; }
-    }
-  </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
@@ -131,14 +72,13 @@
           <div class="project-card">
             <h3 class="project-title">
               <a href="https://dhandlib.org/from-postcards-to-pom-poms-expanding-data-literacy-through-visualization-and-physicalization-with-dear-data/"
-                 target="_blank" rel="noopener">
+                target="_blank" rel="noopener">
                 Dear Data Binghamton
               </a>
             </h3>
             <div class="project-body">
               <img class="thumb-photo" src="images/dearData.jpg"
-                   alt="Photo of collaborative analog data drawings on a long whiteboard surface"
-                   loading="lazy" />
+                   alt="Photo of collaborative analog data drawings on a long whiteboard surface" loading="lazy" />
               <div>
                 <p>Creative analog data literacy project resulting in a blend of art, data, and self-reflection.</p>
                 <p class="meta">Topics: Data visualization, Data privacy</p>
@@ -150,14 +90,13 @@
           <div class="project-card">
             <h3 class="project-title">
               <a href="https://publishing.escholarship.umassmed.edu/jeslib/article/id/961/"
-                 target="_blank" rel="noopener">
+                target="_blank" rel="noopener">
                 Thematic Tri-Semester Data Science Curriculum
               </a>
             </h3>
             <div class="project-body">
               <img class="thumb-icon" src="images/thematic.png"
-                   alt="Infographic showing data science semester themes as a mind map"
-                   loading="lazy" />
+                   alt="Infographic showing data science semester themes as a mind map" loading="lazy" />
               <div>
                 <p>Integrated curriculum designed to introduce data science concepts across disciplines.</p>
                 <p class="meta">Topics: Data literacy, Pedagogy, Curriculum design</p>
@@ -179,6 +118,8 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
