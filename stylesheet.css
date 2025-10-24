@@ -151,9 +151,22 @@ nav a[aria-current="page"]{ font-weight:600; }
   padding: 10px;           /* optional “breathing room” for transparent PNG/SVG */
 }
 
-/* Keep thumbnails square on small screens (don’t turn into banners) */
-@media (max-width: 520px){
-  .project-row{ flex-direction: column; align-items: flex-start; }
-  .thumb-photo, .thumb-icon{ width: 96px; }   /* or keep 120px if you prefer */
+/* Project rows: image left, text right */
+.project-row{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:12px 0;
+  border-top:1px solid var(--line);
+  flex-wrap: nowrap;           /* prevent wrapping under the image */
 }
+.project-row:first-of-type{ border-top:0; padding-top:0; }
 
+/* Image column = fixed 120px; text column fills the rest */
+.project-row > img{ flex:0 0 120px; }
+.project-row > div{ flex:1 1 auto; }
+
+/* Only stack on very small screens */
+@media (max-width: 420px){
+  .project-row{ flex-direction:column; align-items:flex-start; }
+}
