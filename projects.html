@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Projects — Halie Kerns</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Projects by Halie Kerns." />
+  <link rel="stylesheet" href="stylesheet.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="wrap">
+      <a class="brand" href="index.html">Halie Kerns</a>
+      <p class="tagline">Systems and Data Science Librarian</p>
+      <nav aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="mailto:haliekerns@gmail.com">Email</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap" role="main">
+    <header class="page-head card">
+      <h1>Projects</h1>
+      <p>A selection of recent and representative work.</p>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <h2><a href="#" rel="noopener">Information Literacy Game</a></h2>
+        <p>Web-based game to support instruction and assessment.</p>
+        <ul class="meta-list">
+          <li><strong>Role:</strong> Lead</li>
+          <li><strong>Stack:</strong> Twine</li>
+          <li><strong>Year:</strong> 2025</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2><a href="#" rel="noopener">Book-Banning Trends Dashboard</a></h2>
+        <p>Data pipeline + visualization exploring longitudinal trends.</p>
+        <ul class="meta-list">
+          <li><strong>Role:</strong> Research &amp; Dev</li>
+          <li><strong>Stack:</strong> Python, CSV, D3</li>
+          <li><strong>Year:</strong> 2025</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <p>© <span id="year"></span> Halie Kerns</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

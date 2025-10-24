@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Halie Kerns — Systems and Data Science Librarian</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Halie Kerns, Systems and Data Science Librarian." />
+  <link rel="stylesheet" href="stylesheet.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="wrap">
+      <a class="brand" href="index.html">Halie Kerns</a>
+      <p class="tagline">Systems and Data Science Librarian</p>
+      <nav aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="mailto:haliekerns@gmail.com">Email</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap two-col" role="main">
+    <!-- Left column -->
+    <aside class="col-left" aria-labelledby="profile-heading">
+      <section class="card profile">
+        <img src="images/profile.jpg" alt="Portrait of Halie Kerns" class="avatar" />
+        <h2 id="profile-heading" class="visually-hidden">Profile</h2>
+
+        <div class="block">
+          <h3>At a Glance</h3>
+          <ul class="list">
+            <li>Systems, data, and digital scholarship</li>
+            <li>Data visualization &amp; analysis</li>
+            <li>Project management</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <h3>Skills</h3>
+          <ul class="list">
+            <li>Python, SQL</li>
+            <li>Data viz (matplotlib, D3 basics)</li>
+            <li>Web: HTML/CSS, accessibility</li>
+            <li>APIs, automation</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <h3>Contact</h3>
+          <p><a class="button button-primary" href="mailto:haliekerns@gmail.com">Email me</a></p>
+        </div>
+      </section>
+    </aside>
+
+    <!-- Right column -->
+    <section class="col-right" aria-labelledby="about-heading">
+      <article class="card">
+        <h2 id="about-heading">About</h2>
+        <p>
+          I’m a Systems and Data Science Librarian focused on building reliable, accessible
+          digital services and helping teams make sense of data. I support research and teaching
+          with pragmatic tooling, clear documentation, and a strong accessibility mindset.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Selected Projects</h2>
+
+        <div class="project">
+          <h3><a href="#" rel="noopener">Information Literacy Game</a></h3>
+          <p>Interactive, browser-based activity for teaching IL concepts.</p>
+          <p class="meta">Role: Lead · Stack: Twine</p>
+        </div>
+
+        <div class="project">
+          <h3><a href="#" rel="noopener">Book-Banning Trends Dashboard</a></h3>
+          <p>Exploratory visuals combining historical and current datasets.</p>
+          <p class="meta">Tools: Python, CSV, D3</p>
+        </div>
+
+        <p class="more"><a href="projects.html">See all projects →</a></p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <p>© <span id="year"></span> Halie Kerns</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
