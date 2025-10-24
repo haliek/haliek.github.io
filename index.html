@@ -7,17 +7,28 @@
   <meta name="description" content="Portfolio of Halie Kerns, Systems and Data Science Librarian." />
   <link rel="stylesheet" href="stylesheet.css" />
 
-  <!-- Page-specific overrides to keep thumbnails square and text beside image -->
+  <!-- Page-specific overrides -->
   <style>
-    /* Image left, text right */
-    .project-row{
-      display:flex; align-items:center; gap:14px;
-      padding:12px 0; border-top:1px solid var(--line);
-      flex-wrap:nowrap;
+    /* Project grid (2 columns on wide screens, 1 on small) */
+    .project-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 10px;
     }
-    .project-row:first-of-type{ border-top:0; padding-top:0; }
-    .project-row > img{ flex:0 0 120px; }
-    .project-row > div{ flex:1 1 auto; min-width:0; }
+    @media (max-width: 900px){
+      .project-grid{ grid-template-columns: 1fr; }
+    }
+
+    /* Each project card: image left, text right */
+    .project-card{
+      display:flex; align-items:center; gap:14px;
+      padding:16px; border:1px solid var(--line);
+      border-radius: var(--radius); background: var(--card);
+      box-shadow: 0 4px 12px rgba(0,0,0,.05);
+    }
+    .project-card > img{ flex:0 0 120px; }
+    .project-card > div{ flex:1 1 auto; min-width:0; }
 
     /* 120×120 thumbnails */
     .thumb-photo, .thumb-icon{
@@ -26,12 +37,12 @@
       box-shadow:0 3px 8px rgba(0,0,0,.06);
       background:#fff; object-position:center;
     }
-    .thumb-photo{ object-fit:cover; }
-    .thumb-icon{ object-fit:contain; padding:10px; }
+    .thumb-photo{ object-fit:cover; }       /* crop to fill */
+    .thumb-icon{ object-fit:contain; padding:10px; } /* keep full icon */
 
-    /* Only stack on very small screens */
+    /* Keep About/Selected Projects alignment on very small screens */
     @media (max-width:420px){
-      .project-row{ flex-direction:column; align-items:flex-start; }
+      .project-card{ flex-direction:column; align-items:flex-start; }
     }
   </style>
 </head>
@@ -91,45 +102,47 @@
         </p>
       </article>
 
-      <!-- Selected Projects (thumbnail style) -->
+      <!-- Selected Projects: 2-column grid -->
       <article class="card">
         <h2>Selected Projects</h2>
 
-        <!-- Dear Data Binghamton (photo thumb) -->
-        <div class="project-row">
-          <img class="thumb-photo" src="images/dearData.jpg"
-               alt="Photo of collaborative analog data drawings on a long whiteboard surface"
-               loading="lazy" />
-          <div>
-            <h3>
-              <a href="https://dhandlib.org/from-postcards-to-pom-poms-expanding-data-literacy-through-visualization-and-physicalization-with-dear-data/"
-                 target="_blank" rel="noopener">
-                Dear Data Binghamton
-              </a>
-            </h3>
-            <p>Creative analog data literacy project resulting in a blend of art, data, and self-reflection.</p>
-            <p class="meta">Topics: Data visualization, Data privacy</p>
+        <section class="project-grid">
+          <!-- Dear Data Binghamton -->
+          <div class="project-card">
+            <img class="thumb-photo" src="images/dearData.jpg"
+                 alt="Photo of collaborative analog data drawings on a long whiteboard surface"
+                 loading="lazy" />
+            <div>
+              <h3>
+                <a href="https://dhandlib.org/from-postcards-to-pom-poms-expanding-data-literacy-through-visualization-and-physicalization-with-dear-data/"
+                   target="_blank" rel="noopener">
+                  Dear Data Binghamton
+                </a>
+              </h3>
+              <p>Creative analog data literacy project resulting in a blend of art, data, and self-reflection.</p>
+              <p class="meta">Topics: Data visualization, Data privacy</p>
+            </div>
           </div>
-        </div>
 
-        <!-- Thematic Tri-Semester Data Science Curriculum (icon-ish) -->
-        <div class="project-row">
-          <img class="thumb-icon" src="images/thematic.png"
-               alt="Infographic showing data science semester themes as a mind map"
-               loading="lazy" />
-          <div>
-            <h3>
-              <a href="https://publishing.escholarship.umassmed.edu/jeslib/article/id/961/"
-                 target="_blank" rel="noopener">
-                Thematic Tri-Semester Data Science Curriculum
-              </a>
-            </h3>
-            <p>Integrated curriculum designed to introduce data science concepts across disciplines.</p>
-            <p class="meta">Topics: Data literacy, Pedagogy, Curriculum design</p>
+          <!-- Thematic Tri-Semester Data Science Curriculum -->
+          <div class="project-card">
+            <img class="thumb-icon" src="images/thematic.png"
+                 alt="Infographic showing data science semester themes as a mind map"
+                 loading="lazy" />
+            <div>
+              <h3>
+                <a href="https://publishing.escholarship.umassmed.edu/jeslib/article/id/961/"
+                   target="_blank" rel="noopener">
+                  Thematic Tri-Semester Data Science Curriculum
+                </a>
+              </h3>
+              <p>Integrated curriculum designed to introduce data science concepts across disciplines.</p>
+              <p class="meta">Topics: Data literacy, Pedagogy, Curriculum design</p>
+            </div>
           </div>
-        </div>
+        </section>
 
-        <p class="more"><a href="projects.html">See all projects →</a></p>
+        <p class="more" style="margin-top:12px;"><a href="projects.html">See all projects →</a></p>
       </article>
     </section>
   </main>
