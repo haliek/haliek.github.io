@@ -127,16 +127,34 @@ nav a[aria-current="page"]{ font-weight:600; }
   *{ animation:none !important; transition:none !important; scroll-behavior:auto !important }
 }
 
-/* Project banner images */
-.project .thumb,
-.card .thumb {
-  width: 100%;
-  aspect-ratio: 16 / 9;
+/* Thumbnail project rows */
+.project-row{
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+.project-row:first-of-type{ border-top: 0; padding-top: 0; }
+
+/* 120px square thumbnails */
+.thumb-sm{
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   border-radius: 10px;
   border: 1px solid var(--line);
-  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  box-shadow: 0 3px 8px rgba(0,0,0,.06);
   background: #ddd;
-  display: block;
-  margin-bottom: 12px;
+  flex: 0 0 auto;
+}
+
+/* Make rows stack on small screens */
+@media (max-width: 520px){
+  .project-row{ flex-direction: column; }
+  .thumb-sm{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
 }
