@@ -2,51 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Projects — Halie Kerns</title>
+  <title>Halie Kerns — Systems and Data Science Librarian</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Projects by Halie Kerns." />
+  <meta name="description" content="Portfolio of Halie Kerns, Systems and Data Science Librarian." />
   <link rel="stylesheet" href="stylesheet.css" />
 
-  <!-- Page-specific layout overrides -->
+  <!-- Page-specific overrides -->
   <style>
-    /* Grid layout for project cards */
+    /* Project grid (2 columns on wide screens, 1 on small) */
     .project-grid{
       display:grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      margin-top: 20px;
+      gap: 18px;
+      margin-top: 10px;
     }
     @media (max-width: 900px){
       .project-grid{ grid-template-columns: 1fr; }
     }
 
-    /* Each card: image left, details right */
+    /* Each project card: image left, text right */
     .project-card{
-      display:flex; align-items:flex-start; gap:14px;
+      display:flex; align-items:center; gap:14px;
       padding:16px; border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:var(--card);
-      box-shadow:0 4px 12px rgba(0,0,0,0.05);
+      border-radius: var(--radius); background: var(--card);
+      box-shadow: 0 4px 12px rgba(0,0,0,.05);
     }
+    .project-card > img{ flex:0 0 120px; }
+    .project-card > div{ flex:1 1 auto; min-width:0; }
 
-    .project-card img{
-      flex:0 0 120px;
-      width:120px; height:120px;
-      border-radius:10px;
-      border:1px solid var(--line);
+    /* 120×120 thumbnails */
+    .thumb-photo, .thumb-icon{
+      width:120px; height:120px; display:block;
+      border-radius:10px; border:1px solid var(--line);
       box-shadow:0 3px 8px rgba(0,0,0,.06);
-      object-fit:cover;
-      object-position:center;
+      background:#fff; object-position:center;
     }
+    .thumb-photo{ object-fit:cover; }       /* crop to fill */
+    .thumb-icon{ object-fit:contain; padding:10px; } /* keep full icon */
 
-    /* For icons or screenshots you want contained without cropping */
-    .thumb-icon{
-      object-fit:contain;
-      padding:10px;
-      background:#fff;
-    }
-
-    @media(max-width:420px){
+    /* Keep About/Selected Projects alignment on very small screens */
+    @media (max-width:420px){
       .project-card{ flex-direction:column; align-items:flex-start; }
     }
   </style>
@@ -59,91 +54,96 @@
       <a class="brand" href="index.html">Halie Kerns</a>
       <p class="tagline">Systems and Data Science Librarian</p>
       <nav aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="projects.html">Projects</a>
         <a href="https://docs.google.com/document/d/1gGbyf1-onVEUQ87c90viR-rQYo_wvKoxeAvMsMLUpiY/edit?usp=sharing" target="_blank" rel="noopener">Curriculum Vitae</a>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="wrap" role="main">
-    <header class="page-head card">
-      <h1>Projects</h1>
-      <p>A selection of recent and representative work.</p>
-    </header>
+  <main id="main" class="wrap two-col" role="main">
+    <!-- Left column -->
+    <aside class="col-left" aria-labelledby="profile-heading">
+      <section class="card profile">
+        <img src="images/profile.jpg" alt="Portrait of Halie Kerns" class="avatar" />
+        <h2 id="profile-heading" class="visually-hidden">Profile</h2>
 
-    <section class="project-grid">
-      <!-- Dear Data Binghamton -->
-      <div class="project-card">
-        <img src="images/dearData.jpg"
-             alt="Photo of collaborative analog data drawings on a long whiteboard surface"
-             class="thumb-photo" loading="lazy" />
-        <div>
-          <h2>
-            <a href="https://dhandlib.org/from-postcards-to-pom-poms-expanding-data-literacy-through-visualization-and-physicalization-with-dear-data/"
-               target="_blank" rel="noopener">Dear Data Binghamton</a>
-          </h2>
-          <p>Creative analog data literacy project resulting in a blend of art, data, and self-reflection.</p>
-          <ul class="meta-list">
-            <li><strong>Topics:</strong> Data Visualization, Data Privacy</li>
-            <li><strong>Tools:</strong> Analog materials, Visualization methods</li>
+        <div class="block">
+          <h3>Librarian Experience</h3>
+          <ul class="list">
+            <li>Systems</li>
+            <li>Data Science</li>
+            <li>Digital Scholarship</li>
           </ul>
         </div>
-      </div>
 
-      <!-- Thematic Tri-Semester Data Science Curriculum -->
-      <div class="project-card">
-        <img src="images/thematic.png"
-             alt="Infographic showing data science semester themes as a mind map"
-             class="thumb-icon" loading="lazy" />
-        <div>
-          <h2>
-            <a href="https://publishing.escholarship.umassmed.edu/jeslib/article/id/961/"
-               target="_blank" rel="noopener">Thematic Tri-Semester Data Science Curriculum</a>
-          </h2>
-          <p>Integrated data science curriculum designed to scaffold data literacy across three semesters.</p>
-          <ul class="meta-list">
-            <li><strong>Topics:</strong> Data Literacy, Pedagogy, Curriculum Design</li>
-            <li><strong>Tools:</strong> Python, Data modules (custom)</li>
+        <div class="block">
+          <h3>Skills</h3>
+          <ul class="list">
+            <li><strong>Coding:</strong> Python, R, SQL</li>
+            <li><strong>Library Systems:</strong> Koha, Alma</li>
+            <li><strong>Web:</strong> HTML/CSS, JavaScript, Accessibility</li>
           </ul>
         </div>
-      </div>
 
-      <!-- CRAAP Attack -->
-      <div class="project-card">
-        <img src="images/craapAttack.png"
-             alt="Screenshot of CRAAP Attack game interface"
-             class="thumb-icon" loading="lazy" />
-        <div>
-          <h2>
-            <a href="https://journal.code4lib.org/articles/18310"
-               target="_blank" rel="noopener">CRAAP Attack: An Information Literacy Video Game</a>
-          </h2>
-          <p>Interactive, browser-based activity for teaching Information Literacy concepts.</p>
-          <ul class="meta-list">
-            <li><strong>Tools:</strong> Unity, GitHub</li>
-            <li><strong>Topics:</strong> Information Literacy, Game-Based Learning</li>
-          </ul>
+        <div class="block">
+          <h3>Contact</h3>
+          <p><a class="button button-primary" href="mailto:haliekerns@gmail.com">Email me</a></p>
         </div>
-      </div>
+      </section>
+    </aside>
 
-      <!-- Banning the Bildungsroman -->
-      <div class="project-card">
-        <img src="images/banningBild.png"
-             alt="Choropleth map of U.S. states showing censorship instances since 1970"
-             class="thumb-photo" loading="lazy" />
-        <div>
-          <h2>
-            <a href="https://bit.ly/3sitZtV"
-               target="_blank" rel="noopener">Banning the Bildungsroman: A Digital Exhibit</a>
-          </h2>
-          <p>Website built to display a data collection and visualization project.</p>
-          <ul class="meta-list">
-            <li><strong>Tools:</strong> Tableau, Wix</li>
-            <li><strong>Topics:</strong> Censorship, Cultural Trends, Data Visualization</li>
-          </ul>
-        </div>
-      </div>
+    <!-- Right column -->
+    <section class="col-right" aria-labelledby="about-heading">
+      <article class="card">
+        <h2 id="about-heading">About</h2>
+        <p>
+          I am a Systems and Technology Librarian at Bridgewater State University, where I manage core library systems, lead the redesign of the library website, and implement technology solutions that enhance discovery, access, and user experience. Previously, I served as a Digital Scholarship Librarian specializing in data science, data visualization, and research data managemen. With master’s degrees in Library and Information Science and Information Design and Technology, I leverage technical expertise to advance digital library initiatives and build data literacy. I invite you to explore my work and connect with me around shared interests in digital scholarship, data science, and library technology.
+        </p>
+      </article>
+
+      <!-- Selected Projects: 2-column grid -->
+      <article class="card">
+        <h2>Selected Projects</h2>
+
+        <section class="project-grid">
+          <!-- Dear Data Binghamton -->
+          <div class="project-card">
+            <img class="thumb-photo" src="images/dearData.jpg"
+                 alt="Photo of collaborative analog data drawings on a long whiteboard surface"
+                 loading="lazy" />
+            <div>
+              <h3>
+                <a href="https://dhandlib.org/from-postcards-to-pom-poms-expanding-data-literacy-through-visualization-and-physicalization-with-dear-data/"
+                   target="_blank" rel="noopener">
+                  Dear Data Binghamton
+                </a>
+              </h3>
+              <p>Creative analog data literacy project resulting in a blend of art, data, and self-reflection.</p>
+              <p class="meta">Topics: Data visualization, Data privacy</p>
+            </div>
+          </div>
+
+          <!-- Thematic Tri-Semester Data Science Curriculum -->
+          <div class="project-card">
+            <img class="thumb-icon" src="images/thematic.png"
+                 alt="Infographic showing data science semester themes as a mind map"
+                 loading="lazy" />
+            <div>
+              <h3>
+                <a href="https://publishing.escholarship.umassmed.edu/jeslib/article/id/961/"
+                   target="_blank" rel="noopener">
+                  Thematic Tri-Semester Data Science Curriculum
+                </a>
+              </h3>
+              <p>Integrated curriculum designed to introduce data science concepts across disciplines.</p>
+              <p class="meta">Topics: Data literacy, Pedagogy, Curriculum design</p>
+            </div>
+          </div>
+        </section>
+
+        <p class="more" style="margin-top:12px;"><a href="projects.html">See all projects →</a></p>
+      </article>
     </section>
   </main>
 
